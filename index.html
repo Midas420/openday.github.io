@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIA Open Day</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(120deg, #6a11cb, #2575fc);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #6a11cb;
+        }
+
+        section {
+            padding: 5rem 3rem;
+            min-height: 100vh;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 5rem 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .hero p {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-shadow: 1px 1px 5px black;
+            position: relative;
+        }
+
+        .section-title::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: -1;
+            border-radius: 10px;
+        }
+
+        .projects, .plesso {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s, background 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#about">SIA</a>
+        <a href="#projects">Progetti</a>
+        <a href="#plesso">Plesso</a>
+    </nav>
+
+    <div class="logo">
+        <img src="images.jpeg" alt="Logo della scuola">
+    </div>
+
+    <section id="about" class="hero">
+        <div>
+            <h1>Benvenuti al SIA Open Day</h1>
+            <p>Il percorso di Sistemi Informatici Aziendali (SIA) unisce innovazione tecnologica e gestione aziendale. Grazie a un approccio pratico e dinamico, questo indirizzo prepara gli studenti al futuro, offrendo competenze in programmazione, gestione dati e processi aziendali. Scopri un percorso che forma i professionisti di domani!</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Progetti</h2>
+        <div class="projects">
+            <div class="card">
+                <img src="2022-07-19-Melhores-cursos-de-Python.jpg" alt="Progetto Python">
+                <h3>Lavagna Interattiva Touchless</h3>
+                <p>Abbiamo creato una lavagna interattiva touchless utilizzando Python e tecnologie di rilevamento dei gesti, innovativa per l'insegnamento e la collaborazione.</p>
+            </div>
+            <div class="card">
+                <img src="erasmus-map-copy.jpg" alt="Viaggio Erasmus">
+                <h3>Il viaggio Erasmus a Sofia</h3>
+                <p>Un'esperienza unica in Bulgaria, tra scambio culturale e acquisizione di nuove competenze in un ambiente internazionale.</p>
+            </div>
+            <div class="card">
+                <img src="9602bc4b-cfc4-410e-b291-611d478c9d6a.png" alt="Web Development">
+                <h3>Web Development</h3>
+                <p>Un gruppo del corso ha sviluppato siti web dinamici, imparando a combinare HTML, CSS e JavaScript per creare interfacce moderne e funzionali.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="plesso">
+        <h2 class="section-title">Il Plesso</h2>
+        <div class="plesso">
+            <div class="card">
+                <img src="foto-scuola.jpg" alt="Plesso">
+                <h3>Terra di Lavoro</h3>
+                <p>Il plesso "Terra di Lavoro" a Caserta è un istituto all'avanguardia, con numerosi laboratori moderni, tra cui laboratori di informatica, elettronica e linguaggi di programmazione. Gli studenti hanno accesso a strumenti tecnologici avanzati che favoriscono l'apprendimento pratico e innovativo. L'ambiente stimolante e il personale qualificato rendono questa scuola una scelta eccellente per chi desidera prepararsi al mondo del lavoro o all'università.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 SIA Open Day | Tutti i diritti riservati</p>
+    </footer>
+</body>
+</html>
