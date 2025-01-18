@@ -21,7 +21,7 @@
         .navbar {
             position: sticky;
             top: 0;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(31, 31, 31, 0.7);
             display: flex;
             justify-content: space-around;
             padding: 1rem;
@@ -39,8 +39,31 @@
             color: #6a11cb;
         }
 
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .loading-screen img {
+            width: 100px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         section {
-            padding: 5rem 3rem;
+            padding: 5rem 2rem;
             min-height: 100vh;
         }
 
@@ -49,10 +72,16 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.1);
             padding: 3rem;
             border-radius: 15px;
-            margin: 5rem 3rem;
+            margin: 5rem 2rem;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .hero h1 {
@@ -67,7 +96,7 @@
 
         .section-title {
             font-size: 2.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             text-align: center;
             text-shadow: 1px 1px 5px black;
             position: relative;
@@ -79,22 +108,21 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 350px;
-            height: 120px;
-            background: rgba(255, 255, 255, 0.2);
+            width: 300px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
             z-index: -1;
             border-radius: 10px;
         }
 
         .projects, .plesso {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
         .card {
             background: rgba(255, 255, 255, 0.1);
-            
             padding: 2rem;
             border-radius: 15px;
             transition: transform 0.3s, background 0.3s;
@@ -102,7 +130,7 @@
         }
 
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-10px) scale(1.05);
             background: rgba(255, 255, 255, 0.2);
         }
 
@@ -131,9 +159,29 @@
             width: 150px;
             height: auto;
         }
+
+        @media (max-width: 768px) {
+            .hero {
+                margin: 3rem 1rem;
+                padding: 2rem;
+            }
+
+            .section-title::before {
+                width: 200px;
+                height: 80px;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="loading-screen" id="loading-screen">
+        <img src="images.jpeg" alt="Logo della scuola">
+    </div>
+
     <nav class="navbar">
         <a href="#about">SIA</a>
         <a href="#projects">Progetti</a>
@@ -186,5 +234,12 @@
     <footer class="footer">
         <p>&copy; 2025 SIA Open Day | Tutti i diritti riservati</p>
     </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
